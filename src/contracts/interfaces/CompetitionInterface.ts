@@ -11,29 +11,25 @@ class Competition extends BaseInterface {
       super(provider, address, abi);
   }
 
-  async create(id: number): Promise<number> {
-    return this._contract.create(id);   
-  }
-  async remove(id: number): Promise<number> {
+  async remove(id: number) {
     return this._contract.remove(id);   
   }
 
-  async start(id: number, participants: string[], endTime: number): Promise<number> {
+  async start(id: number, participants: string[], endTime: number) {
     return this._contract.start(id, participants, endTime);   
   }
 
-  async fillData(id: number, data: number): Promise<number> {
+  async fillData(id: number, data: number) {
     return this._contract.fillProof(id, data);   
-  }
-
-  async requestResult(id: number): Promise<number> {
-    return this._contract.requestData(id);   
   }
 
   async finish(id: number): Promise<number> {
     return this._contract.finish(id);   
   }
 
+  // async getParticipants(id: number): Promise<number[]> {
+  //   return this._contract.getParticipants(id);   
+  // }
 
 }
 

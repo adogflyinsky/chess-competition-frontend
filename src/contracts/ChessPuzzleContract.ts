@@ -8,7 +8,7 @@ import { SMART_ADDRESS } from "./utils/getAddress";
 export default class ChessPuzzleContract extends Erc721 {
   constructor(provider?: ethers.providers.Web3Provider) {
     const rpcProvider = new ethers.providers.JsonRpcProvider(getRPC());
-    super(provider || rpcProvider, SMART_ADDRESS["NFT"], getChessPuzzleAbi());
+    super(provider || rpcProvider, SMART_ADDRESS["ChessPuzzle"], getChessPuzzleAbi());
     if (!provider) {
       this._contract = new ethers.Contract(
         this._contractAddress,
