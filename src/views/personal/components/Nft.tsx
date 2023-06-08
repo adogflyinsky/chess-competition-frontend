@@ -15,20 +15,24 @@ import React from "react";
 interface IProps {
   item: INftItem;
   index: number;
-  isTransfer?: boolean;
-  isUnList?: boolean;
-  isList?: boolean;
-  isAuction?: boolean;
+  isCreate?: boolean;
+  isStart?: boolean;
+  isRemove?: boolean;
+  isFillData?: boolean;
+  isRequestResult?: boolean;
+  isFinish?: boolean;
   onAction?: (action: ActionType) => void;
 }
 
 export default function Nft({
   item,
   index,
-  isTransfer,
-  isAuction,
-  isList,
-  isUnList,
+  isCreate,
+  isStart,
+  isRemove,
+  isFillData,
+  isRequestResult, 
+  isFinish,
   onAction,
 }: IProps) {
   return (
@@ -64,41 +68,31 @@ export default function Nft({
       >
         Go to puzzle
       </Button>
-      {isList && isAuction && (
+      {isStart && isRemove && (
         <SimpleGrid w="full" columns={2} spacingX="10px">
           <Button
             variant="primary"
-            onClick={() => onAction && onAction("LIST")}
+            onClick={() => onAction && onAction("START")}
           >
-            List
+            START
           </Button>
           <Button
             variant="primary"
-            onClick={() => onAction && onAction("AUCTION")}
+            onClick={() => onAction && onAction("REMOVE")}
           >
-            Auction
+            REMOVE
           </Button>
         </SimpleGrid>
       )}
-      {isTransfer && (
+    
+      {isCreate && (
         <Button
           variant="primary"
           w="full"
           mt="10px"
-          onClick={() => onAction && onAction("TRANSFER")}
+          onClick={() => onAction && onAction("CREATE")}
         >
-          Transfer
-        </Button>
-      )}
-
-      {isUnList && (
-        <Button
-          variant="primary"
-          w="full"
-          mt="10px"
-          onClick={() => onAction && onAction("UNLIST")}
-        >
-          UnList
+          CREATE
         </Button>
       )}
     </Flex>

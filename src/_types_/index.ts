@@ -9,8 +9,7 @@ export interface IRate {
 }
 
 export enum TOKEN {
-  BNB = "BNB",
-  USDT = "USDT",
+  VToken = "VToken",
 }
 
 
@@ -30,4 +29,4 @@ export interface INftItem {
   url: string;
 }
 
-export type ActionType = "LIST" | "UNLIST" | "TRANSFER" | "AUCTION";
+export type ActionType = "CREATE" | "REMOVE" | "START" | "FILLDATA" | "REQUEST" |"FINISH";

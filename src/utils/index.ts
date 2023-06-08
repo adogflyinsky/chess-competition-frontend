@@ -24,3 +24,4 @@ export const getToast = (description: string | object, status: UseToastOptions["
   }
   return { title, status, position: 'top-right', description: msg, duration: 3000 } 
 }
+
