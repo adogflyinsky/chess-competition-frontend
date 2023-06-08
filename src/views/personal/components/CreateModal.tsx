@@ -29,6 +29,7 @@ export default function CreateModal({
     ...props
 }: IProps) {
     const [prizeId, setPrizeId] = React.useState<number>(0);
+    const [time, setTime] = React.useState<number>(0);
 
     return (
         <Modal closeOnOverlayClick={false} {...props}>
@@ -56,6 +57,16 @@ export default function CreateModal({
                                 value={prizeId}
                                 onChange={(e) => {
                                     setPrizeId(+e.target.value)
+                                }}
+                            />
+                        </Flex>
+                        <Flex w="full" my="10px" direction="column">
+                            <Text>Time </Text>
+                            <Input
+                                w="full"
+                                value={time}
+                                onChange={(e) => {
+                                    setTime(+e.target.value)
                                 }}
                             />
                         </Flex>
