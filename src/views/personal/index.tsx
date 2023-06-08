@@ -5,6 +5,7 @@ import { useAppSelector } from "@/reduxs/hooks";
 import { INftItem, ActionType } from "@/_types_";
 import {
   Flex,
+  Text,
   Tabs,
   TabList,
   Tab,
@@ -103,23 +104,17 @@ export default function PersonalView() {
   }, [getListNft]);
 
   return (
-    <Flex w="full">
-      <Tabs>
-        <TabList borderBottomColor="#5A5A5A" borderBottomRadius={2} mx="15px">
-          <Tab
-            textTransform="uppercase"
-            color="#5A5A5A"
-            _selected={{ borderBottomColor: "white", color: "white" }}
-          >
-            PUZZLES
-          </Tab>
-          <Tab
-            textTransform="uppercase"
-            color="#5A5A5A"
-            _selected={{ borderBottomColor: "white", color: "white" }}
-          >
-            IN COMPETITION
-          </Tab>
+    <Flex 
+    flexDirection="column"
+    >
+      <Tabs align="start" isFitted>
+        <TabList>
+        <Tab>
+              <Text variant="notoSan" fontSize="16px" color="rgba(255,255,255, 0.5)">PUZZLES</Text>
+            </Tab>
+            <Tab>
+               <Text variant="notoSan" fontSize="16px" color="rgba(255,255,255, 0.5)">IN COMPETITION</Text>
+            </Tab>
         </TabList>
 
         <TabPanels>

@@ -23,6 +23,9 @@ export default class ChessPuzzleContract extends Erc721 {
     const ids = await Promise.all(urls.map((id) => this._toNumber(id)));
     return ids;
   };
+  async getMinterRole()  {
+    return await this._contract.MINTER_ROLE();
+  }
 
   getListNFT = async (address: string): Promise<INftItem[]> => {
     const ids = await this._listPuzzleIds(address);
