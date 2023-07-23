@@ -1,0 +1,6 @@
+export const SMART_ADDRESS = {
+  "vToken": "0xE531e3Fe18922A0C1389a7B6c13D5cdEaC734ADF",
+  "competitionToken": "0x2F6ab93b0aE62a9EFB9Ae994F60239904aFF23a8",
+  "competitionV2": "0xEd834E28B962EfEfE633D1a36D6674E6018b4e32"
+}
+
